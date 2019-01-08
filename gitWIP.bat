@@ -4,7 +4,7 @@ echo type "s = Subir a github" or "b = bajar de github"
 cd "C:\Users\asaiz\Documents\GitHub\bolsadetrabajo"
 
 set GIT_PATH="C:\Program Files\Git\bin\git.exe"
-set BRANCH = "master"
+set BRANCH = "WIP"
 
 :P
 set ACTION=
@@ -13,7 +13,7 @@ if "%ACTION%"=="s" (
 
 
 
-	%GIT_PATH% checkout master
+	
   	%GIT_PATH% add .
 	%GIT_PATH% commit -am "Auto-committed on %date%"
 	%GIT_PATH% push origin %BRANCH%
@@ -23,7 +23,7 @@ if "%ACTION%"=="s" (
 )
 if "%ACTION%"=="b" (
 
-	%GIT_PATH% checkout master
+
 	%GIT_PATH% pull %BRANCH%
 )
 if "%ACTION%"=="exit" exit /b
