@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 use App\Empresa;
 class EmpresasController extends Controller
 {
+    public function getIndex()
+    {
+        $empresa=new Empresa();
+        $listaEmpresas=$empresa::all();
+        return view('empresas.empresas',['listaEmpresas'=>$listaEmpresas]);
+    }
     public function postCreate(Request $request)
     {
     	$empresa=new Empresa();
