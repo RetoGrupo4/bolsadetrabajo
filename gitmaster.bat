@@ -19,8 +19,9 @@ set BRANCH = "master"
 set ACTION=
 set /P ACTION=Action: %=%
 if "%ACTION%"=="s" (
-git checkout master
+
 %GIT_PATH% init
+%GIT_PATH% checkout master
   %GIT_PATH% add .
 	%GIT_PATH% commit -am "Auto-committed on %date%"
 	%GIT_PATH% push origin %BRANCH%
