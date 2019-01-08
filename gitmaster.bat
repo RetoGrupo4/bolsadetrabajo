@@ -12,7 +12,8 @@ set /P ACTION=Action: %=%
 if "%ACTION%"=="s" (
 
 
-
+	%GIT_PATH% pull fetch
+	%GIT_PATH% pull --tags
 	%GIT_PATH% checkout master
   	%GIT_PATH% add .
 	%GIT_PATH% commit -am "Auto-committed on %date%"
