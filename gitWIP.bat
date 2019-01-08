@@ -7,7 +7,7 @@ cd "C:\Users\asaiz\Documents\GitHub\bolsadetrabajo"
 set GIT_PATH="C:\Program Files\Git\bin\git.exe"
 set BRANCH = "master"
 
-%GIT_PATH% checkout master
+
 :P
 set ACTION=
 set /P ACTION=Action: %=%
