@@ -14,7 +14,6 @@ set /P ACTION=Action: %=%
 if "%ACTION%"=="s" (
 
 
-	%GIT_PATH% pull --tags
 	%GIT_PATH% add .
 	%GIT_PATH% commit -am "Auto-committed on %date%"
 	%GIT_PATH% push origin %BRANCH%
@@ -23,7 +22,7 @@ if "%ACTION%"=="s" (
 
 )
 if "%ACTION%"=="b" (
-	
+	%GIT_PATH% fetch %BRANCH%
 	%GIT_PATH% pull --tags
 	%GIT_PATH% pull %BRANCH%
 )
