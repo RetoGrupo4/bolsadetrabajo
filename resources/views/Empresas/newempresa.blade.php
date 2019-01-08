@@ -23,7 +23,7 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="#">Alumnos</a>
           <a class="nav-item nav-link" href="#">Ofertas</a>
-          <a class="nav-item nav-link" href="#">Empresas</a>
+          <a class="nav-item nav-link" href="{{url('empresas')}}">Empresas</a>
         </div>
     </div>
   </nav>
@@ -34,9 +34,8 @@
      </button>
      <div class="collapse navbar-collapse" id="navbarNavEmpresas">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Listado empresas</a>
-          <a class="nav-item nav-link" href="#">Nueva Empresa</a>
-          <a class="nav-item nav-link" href="#">Editar empresa</a>
+          <a class="nav-item nav-link active" href="{{url('empresas')}}">Listado empresas</a>
+          <a class="nav-item nav-link" href="{{url('empresas/create')}}">Nueva Empresa</a>
         </div>
     </div>
   </nav>
