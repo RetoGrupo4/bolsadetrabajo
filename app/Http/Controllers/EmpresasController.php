@@ -20,7 +20,45 @@ class EmpresasController extends Controller
     	$empresa->email=$request->input('Email');
     	$empresa->responsable=$request->input('responsable');
     	$empresa->telefono=$request->input('telefono');
-    	$empresa->save();
-    	//return redirect()->action('EmpresasController@getIndex');
+       	$empresa->save();
+
+    	return redirect()->action('EmpresasController@getIndex');
+    }
+
+    public function getShow($idEmpresa)
+    {
+        $empresas=new Empresa();
+        $empresa=$empresas::findorfail($idEmpresa);
+        return view('empresas.show', ['empresa'=>$empresa]);
+    }
+    
+    public function getEdit($idEmpresa)
+    {
+        $empresas=new Empresa();
+        $empresa= $empresas::findorfail($idEmpresa);
+        return view('empresas.edit',['empresa'=>$empresa]);
+    }
+
+    public function putUpdate(Request $request,$idEmpresa)
+    {
+        $empresas=new Empresa();
+        $empresa=$empresas::findOrFail($idEmpresa);
+        $empresa->nombre=$request->input('empresa');
+        $empresa->email=$request->input('Email');
+        $empresa->responsable=$request->input('responsable');
+        $empresa->telefono=$request->input('telefono');
+        $empresa->save();
+
+        return redirect()->action('EmpresasController@getIndex');
+    }
+
+    public function deleteEmpresas($idEmpresa)
+    {
+        $empresas=new Empresa();
+        $empresa=$empresas::findorfail($idEmpresa);
+        $empresa->delete();
+        $empresas=new Empresa();
+        $listaEmpresas=$empresas::all();
+        return view('empresas.empresas',['listaEmpresas'=>$listaEmpresas]);
     }
 }

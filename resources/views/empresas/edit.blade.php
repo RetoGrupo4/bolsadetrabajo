@@ -34,8 +34,8 @@
      </button>
      <div class="collapse navbar-collapse" id="navbarNavEmpresas">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Listado empresas</a>
-          <a class="nav-item nav-link" href="#">Nueva Empresa</a>
+          <a class="nav-item nav-link active" href="{{url('empresas')}}">Listado empresas</a>
+          <a class="nav-item nav-link" href="{{url('empresas/create')}}">Nueva Empresa</a>
         </div>
     </div>
   </nav>
@@ -46,25 +46,30 @@
       Modificar datos de una empresa
     </div>
     <!-- Formulario para coger los datos de la empresa-->
-    <form class="needs-validation" novalidate  action="{{action('EmpresasController@postCreate')}}" method="POST">
-    
+
+  
+
+
+
+
+
+
+    <form action="{{action('EmpresasController@putUpdate',$empresa->id_empresas)}}" method="POST">
+        {{method_field('PUT')}}
         {{ csrf_field() }}
 
         <div class="form-row">
           <!-- Nombre de la empresa-->
           <div class="col-md-4 mb-3">
             <label for="empresa">Nombre de la empresa</label>
-            <input type="text" class="form-control" id="empresa" placeholder="Nombre de la empresa" required>
+            <input type="text" class="form-control" id="empresa" name="empresa" value="{{$empresa->nombre}}" required>
             
           </div>
 
           <!-- Correo electronico al que mandaremos los alumnos inscritos-->
           <div class="col-md-4 mb-3">
             <label for="Email">Correo Electronico</label>
-            <input type="email" class="form-control" id="Email" placeholder="usuario@dominio.com"  required>
-            <div class="valid-feedback">
-              ¡Formato correcto!
-            </div>
+            <input type="email" class="form-control" id="Email" name="Email" value="{{$empresa->email}}" required>
              <div class="invalid-feedback">
                 Por favor, introduzca un correo electronico valido
              </div>
@@ -75,7 +80,7 @@
 
             <label for="responsable">Resposable</label>
             <div class="input-group">          
-              <input type="text" class="form-control" id="responsable" placeholder="responsable de la empresa" aria-describedby="inputGroupPrepend" required>
+              <input type="text" class="form-control" id="responsable" name="responsable" value="{{$empresa->responsable}}" aria-describedby="inputGroupPrepend" required>
               <div class="invalid-feedback">
                 Por favor, introduzca el nombre de la persona de contacto.
               </div>
@@ -87,10 +92,7 @@
           <!-- Telefono de contacto-->
           <div class="col-md-12 mb-3">
             <label for="telefono">Telefono</label>
-            <input type="text" class="form-control" id="telefono" placeholder="Telefono de contacto" required>
-            <div class="invalid-feedback">
-              Por favor, introduzca un número de telefono de contacto.
-            </div>
+            <input type="text" class="form-control" id="telefono" name="telefono" value="{{$empresa->telefono}}" required>
           </div>
 
           <button class="btn btn-primary" type="submit">Enviar</button>
