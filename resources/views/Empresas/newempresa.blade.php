@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Datos de empresa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@extends('layouts.master')
 
-    <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-</head>
-<body>
+
+@section('content')
   <div class="container-fluid">
   
   <!-- Zona navegación general-->
@@ -43,7 +34,7 @@
   <!-- Zona navegación particular para las empresas --> 
   
 
-    <div class="container bg-info text-center">
+    <div class="container bg-success text-center">
       Datos de nueva empresa
     </div>
     <!-- Formulario para coger los datos de la empresa-->
@@ -113,5 +104,4 @@
   }, false);
 })();
 </script>
-</body>
-</html>
+	@endsection
