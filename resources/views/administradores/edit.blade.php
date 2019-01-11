@@ -34,18 +34,18 @@
   </nav>
 
   <div class="container bg-info text-center">
-      Datos de nueva empresa
+      Modificar administrador
     </div>
     <!-- Formulario para coger los datos de la empresa-->
-    <form class="needs-validation" novalidate  action="{{action('AdminsController@postCreate')}}" method="POST">
+    <form class="needs-validation" novalidate  action="#" method="POST">
     
         {{ csrf_field() }}
 
         <div class="form-row">
           <!-- Nombre de la empresa-->
           <div class="col-md-4 mb-3">
-            <label for="empresa">Nombre del administrador</label>
-            <input type="text" class="form-control" name="administrador" id="administrador" placeholder="Nombre del administrador" required>
+            <label for="administrador">Nombre del administrador</label>
+            <input type="text" class="form-control" name="administrador" id="administrador" value="{{$administrador->nombre}}" required>
             <div class="invalid-feedback">
                 Por favor, introduzca un correo electronico valido
              </div>
@@ -71,14 +71,7 @@
             </div>
           </div>
         </div>
-        <div class="form-row">
-
-          <!-- Telefono de contacto-->
-          <div class="col-md-12 mb-3">
-            <label for="telefono">Contraseña</label>
-            <input type="text" class="form-control" name="contrasenia" id="contrasenia" placeholder="Contraseña" required>
-           
-          </div>
+        
 
           <button class="btn btn-primary" type="submit">Enviar</button>
   </form>

@@ -34,17 +34,17 @@
   </nav>
 
   <div class="container bg-info text-center">
-      Datos de nueva empresa
+      Datos del nuevo administrador
     </div>
     <!-- Formulario para coger los datos de la empresa-->
-    <form class="needs-validation" novalidate  action="{{action('EmpresasController@postCreate')}}" method="POST">
+    <form class="needs-validation" novalidate  action="{{action('AdminsController@postCreate')}}" method="POST">
     
         {{ csrf_field() }}
 
         <div class="form-row">
           <!-- Nombre de la empresa-->
           <div class="col-md-4 mb-3">
-            <label for="empresa">Nombre de la empresa</label>
+            <label for="empresa">Nombre del Administrador</label>
             <input type="text" class="form-control" name="empresa" id="empresa" placeholder="Nombre de la empresa" required>
             <div class="invalid-feedback">
                 Por favor, introduzca un correo electronico valido

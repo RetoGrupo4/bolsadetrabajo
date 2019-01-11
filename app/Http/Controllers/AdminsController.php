@@ -29,12 +29,14 @@ class AdminsController extends Controller
 
     public function postCreate()
     {
-    	
+    	return view('administradores.admins');
     }
 
     public function getEdit($idAdmin)
     {
-    	return view('administradores.edit');
+        $administradores=new Administrador();
+        $administrador= $administradores->findOrFail($idAdmin);
+    	return view('administradores.edit',['administrador'=>$administrador]);
     }
 
     public function putEdit(Request $request, $idAdmin)
