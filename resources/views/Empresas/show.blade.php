@@ -62,7 +62,7 @@
                    Borrar Empresa
                </button>
 			</form>
-			  </div>
+			</div>
 			  
 		</div>
 	</div>
