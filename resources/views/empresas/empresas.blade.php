@@ -54,7 +54,7 @@
   @foreach($listaEmpresas as $empresa)
     <tr>
       <th scope="row">{{$empresa->id_empresas}}</th>
-      <td><a href="{{url('empresas/show/'.$empresa->id_empresas)}}">{{$empresa->nombre}}</a></td>
+      <td><a href="{{url('ofertas/show/'.$empresa->id_empresas)}}">{{$empresa->nombre}}</a></td>
       <td>{{$empresa->email}}</td>
       <td>{{$empresa->responsable}}</td>
       <td>{{$empresa->telefono}}</td>

@@ -23,7 +23,7 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link active" href="#">Alumnos</a>
           <a class="nav-item nav-link" href="#">Ofertas</a>
-          <a class="nav-item nav-link" href="#">Empresas</a>
+          <a class="nav-item nav-link" href="{{url('empresas')}}">Empresas</a>
         </div>
     </div>
   </nav>
