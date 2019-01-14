@@ -47,13 +47,6 @@
     </div>
     <!-- Formulario para coger los datos de la empresa-->
 
-  
-
-
-
-
-
-
     <form action="{{action('EmpresasController@putUpdate',$empresa->id_empresas)}}" method="POST">
         {{method_field('PUT')}}
         {{ csrf_field() }}

@@ -39,10 +39,9 @@ Route::put('empresas/update/{idEmpresa}','EmpresasController@putUpdate');
  * Rutas para acceder a las vistas y métedos para gestionar el CRUD de los administradores.
  */
 Route::get('admin','AdminsController@getIndex');
-Route::get('admin/create', function(){
-	return view('administradores.newAdmin');
-});
+Route::get('admin/create', 'AdminsController@getCreate');
 Route::get('admin/show/{idAdmin}','AdminsController@getShow');
 Route::get('admin/edit/{idAdmin}','AdminsController@getEdit');
-Route::put('admin/edit/{idAdmin}','AdminsController@putEdit');
+Route::post('admin/edit/{idAdmin}','AdminsController@postUpdate');
+Route::post('admin/create','AdminsController@postCreate');
 Route::delete('admin/delete/{idAdmin}','AdminsController@deleteAdmin');

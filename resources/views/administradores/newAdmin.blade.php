@@ -38,70 +38,45 @@
     </div>
     <!-- Formulario para coger los datos de la empresa-->
     <form class="needs-validation" novalidate  action="{{action('AdminsController@postCreate')}}" method="POST">
-    
-        {{ csrf_field() }}
-
-        <div class="form-row">
-          <!-- Nombre de la empresa-->
-          <div class="col-md-4 mb-3">
-            <label for="empresa">Nombre del Administrador</label>
-            <input type="text" class="form-control" name="empresa" id="empresa" placeholder="Nombre de la empresa" required>
-            <div class="invalid-feedback">
-                Por favor, introduzca un correo electronico valido
-             </div>
-          </div>
-
-          <!-- Correo electronico al que mandaremos los alumnos inscritos-->
-          <div class="col-md-4 mb-3">
-            <label for="Email">Correo Electronico</label>
-            <input type="email" class="form-control" id="Email" name="Email"  placeholder="usuario@dominio.com"  required>
-            <div class="invalid-feedback">
-                Por favor, introduzca un correo electronico valido
-             </div>
-          </div>
-
-          <!-- Persona con la que nos pondremos en contacto en relación a la oferta-->
-          <div class="col-md-4 mb-3">
-            <label for="responsable">Resposable</label>
-            <div class="input-group">          
-              <input type="text" class="form-control" name="responsable" id="responsable" placeholder="responsable de la empresa" aria-describedby="inputGroupPrepend" required>
-              <div class="invalid-feedback">
-                Por favor, introduzca el nombre de la persona de contacto.
-              </div>
-            </div>
-          </div>
+      {{method_field('POST')}}
+      {{ csrf_field() }}
+      <div class="form-row">
+       <div class="form-group">
+          <label for="inputAddress">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre del administrador" required>
+       </div>
+       <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="Email" name="Email" placeholder="email">
+       </div>
+       <div class="form-group col-md-6">
+          <label for="inputPassword4">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password" >
+        
         </div>
-        <div class="form-row">
 
-          <!-- Telefono de contacto-->
-          <div class="col-md-12 mb-3">
-            <label for="telefono">Telefono</label>
-            <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Telefono de contacto" required>
-           
-          </div>
+      <div class="form-group">
+        <label for="rol">Rol</label>
+        <select id="rol" name="rol" class="form-control">
+          <option selected value="2">Admnistrador</option>
+          <option value="1">Super Administrador</option>
+        </select>
+      </div>
+    </div>  
+  <div class="form-row">
 
-          <button class="btn btn-primary" type="submit">Enviar</button>
-  </form>
-</div>
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script>
+    <div class="form-group col-md-4">
+      <label for="departamento">Departamento</label>
+      <select id="departamento" name="departamento" class="form-control">
+        @foreach($listaDepartamentos as $departamento)
+          <option value="{{$departamento->id_departamentos}}">{{$departamento->descripcion}}</option>
+        @endforeach
+      </select>
+    </div>
+
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Modificar</button>
+</form>
 </body>
 </html>
