@@ -18,8 +18,8 @@ class CreateInscripcionesTable extends Migration
             $table->date('fecha');
             $table->integer('id_alumno')->unsigned();
             $table->integer('id_oferta')->unsigned();
-            //$table->foreign('id_alumno')->references('id_alumno')->on('alumnos');
-            //$table->foreign('id_oferta')->references('id_ofertas')->on('ofertas');
+            $table->foreign('id_alumno')->references('id_alumno')->on('alumnos');
+            $table->foreign('id_oferta')->references('id_ofertas')->on('ofertas');
             $table->timestamps();
         });
     }

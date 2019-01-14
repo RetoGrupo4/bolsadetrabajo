@@ -10,16 +10,15 @@ body {
 }
 
 .fondo{
-   /* background-image: linear-gradient(to right,#40610f,#456614,#4a6b1a);*/
-    background-image: linear-gradient(to right,#0d692f,#166f34,#1e7439);
+    background-image: linear-gradient(to right,rgb(58, 197, 58),rgba(0, 128, 0, 0.938),rgba(80, 194, 80, 0.952));
 
 }
 
 .formInsertar{
    
     background-image: linear-gradient(to right, white, rgba(240, 231, 231, 0.623));
-    border-top: 10px double #01642a;
-    border-bottom: 10px double #01642a;
+    border-top: 10px double #baff60;
+    border-bottom: 10px double #baff60;
 
  
  
@@ -28,8 +27,8 @@ body {
 .titulo{
 font-family: cursive; 
 font-size: 30px; 
-color:#10431f; 
-text-shadow: 2px 2px 6px  #10431f;
+color:rgba(0, 128, 0, 0.938); 
+text-shadow: 2px 2px 6px  #90dd2a;
 }
 
 li{
@@ -37,16 +36,11 @@ li{
     width: 9em;
     -moz-border-radius: 1em 4em 1em 4em;
     border-radius: 1em 4em 1em 4em;
-    background-color:#3c7d4a;
-    border: 2px solid #01642a;
+    background-color:rgb(196, 243, 125);
+    border: 2px solid rgba(0, 128, 0, 0.849);
     padding-left: 0.5em;
 
     } 
-
-    li:hover{
-        background-color:#01642a;
-        border: 2px solid #3c7d4a;
-    }
 
     .footerCu{
         margin-bottom: 12.7em;
@@ -73,12 +67,12 @@ li{
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
         border-radius: 7px;
-        border:2px solid #01642a;
+        border:2px solid #90dd2a;
        
     }
 
     .thumbnail:hover{
-        
+        background: yellowgreen;
     }
  
     
