@@ -18,4 +18,9 @@ class OfertasController extends Controller
     	$oferta= Oferta::findOrFail($idOferta);
     	return view('ofertas.show',['oferta'=>$oferta]);
     }
+
+    public function create()
+    {
+        return view('ofertas.newoferta');
+    }
 }

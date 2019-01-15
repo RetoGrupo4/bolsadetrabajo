@@ -18,7 +18,7 @@ class InscripcionesController extends Controller
             $temp=Oferta::find($inscripcion->id_oferta);
             array_push($ofertas,$temp);
         }
-      return view('ofertas.ofertas',['ofertas'=>$ofertas]);
+      return view('inscripciones.candidaturas',['ofertas'=>$ofertas]);
     }
 
     public function getCreate($idOferta,$idAlumno)

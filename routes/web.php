@@ -14,9 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('ofertas/create/','OfertasController@create'); //Va a la pagina para crear una oferta nueva
 Route::get('ofertas','OfertasController@getOfertas');
-Route::get('ofertas/show/{idOferta}','OfertasController@getShow');
+Route::get('ofertas/show/{idOferta}','OfertasController@getShow'); 
 Route::get('inscripciones/show/{idAlumno}','InscripcionesController@getShow');
 Route::get('inscripciones/create/{idOferta}/{idAlumno}','InscripcionesController@getCreate');
 
