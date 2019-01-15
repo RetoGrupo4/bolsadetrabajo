@@ -1,52 +1,36 @@
-@extends('layouts.master')
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ofertas</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-@section('content')
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
     <!-- Zona de navegación-->
 
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  	<a class="navbar-brand" href="#">Navbar</a>
+	  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	 	 </button>
+	 	 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		    <div class="navbar-nav">
+		      <a class="nav-item nav-link active" href="#">Mi Curriculum</a>
+		      <a class="nav-item nav-link" href="{{url('ofertas')}}">Nuestras ofertas</a>
+		      <a class="nav-item nav-link" href="{{url('inscripciones/show/2')}}">Mis candidaturas</a>
+		    </div>
+	  </div>
+	</nav>
 
-
-<div class="container">
-    <div class="row  mt-5 mb-5">
-        <div class="col-lg-12 my-3 ">
-            <div class="pull-right">
-                <div class="btn-group">
-                    <button class="btn btn-outline-info" id="list">
-                        Lista
-                    </button>
-                    <button class="btn btn-outline-danger" id="grid">
-                        Cuadricula
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div> 
-    <div id="products" class="row view-group ">
-    @foreach($ofertas as $oferta)
-        <div class="item col-xs-4 col-lg-4">
-            <div class="thumbnail card ">
-                
-                <div class="caption card-body">
-                <h4 class="group card-title inner list-group-item-heading">{{$oferta->puesto}}</h4>
-                    <p class="group inner list-group-item-text">{{$oferta->localidad}}
-                    <div class="row">
-                        <div class="col-12"><p class="group inner list-group-item-text"> {{$oferta->requisitos}}</p>
-                        </div>
-                        <div class="col-12  ">
-                            <a class="btn btn-success "  href="{{url('ofertas/show/'.$oferta->id_ofertas)}}">Detalles</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-    </div>
-    
-</div>
-	<!-- Listado de ofertas
+	<!-- Listado de ofertas-->
 	<div class="container-fluid">
 	<table class="table">
-  	<thead class="bg-success">
-    <tr class="text-white">
+  	<thead class="thead-dark">
+    <tr>
       <th scope="col">Fecha</th>
       <th scope="col">Puesto</th>
       <th scope="col">Experiencia</th>
@@ -64,7 +48,6 @@
    @endforeach
   </table>
 </div>
-</div> -->
 
 
 
@@ -85,15 +68,10 @@
 	 @endforeach
 	</table>-->
 	
+	<!-- Primero jQuery, luego Popper.js, y por ultimo Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-	 @endsection
-	 
-	 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script>
-		$(document).ready(function() {
-            $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
-            $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
-        });
-    </script>
-    
+</body>
+</html>
