@@ -14,9 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('ofertas/create/','OfertasController@create'); //Va a la pagina para crear una oferta nueva
+Route::post('ofertas/create','OfertasController@postCreate');
 Route::get('ofertas','OfertasController@getOfertas');
-Route::get('ofertas/show/{idOferta}','OfertasController@getShow');
+Route::delete('ofertas/delete/{idOferta}','OfertasController@deleteOferta');
+Route::get('ofertas/show/{idOferta}','OfertasController@getShow'); 
 Route::get('inscripciones/show/{idAlumno}','InscripcionesController@getShow');
 Route::get('inscripciones/create/{idOferta}/{idAlumno}','InscripcionesController@getCreate');
 
@@ -39,10 +41,21 @@ Route::put('empresas/update/{idEmpresa}','EmpresasController@putUpdate');
  * Rutas para acceder a las vistas y métedos para gestionar el CRUD de los administradores.
  */
 Route::get('admin','AdminsController@getIndex');
-Route::get('admin/create', function(){
-	return view('administradores.newAdmin');
-});
+Route::get('admin/create', 'AdminsController@getCreate');
 Route::get('admin/show/{idAdmin}','AdminsController@getShow');
 Route::get('admin/edit/{idAdmin}','AdminsController@getEdit');
-Route::put('admin/edit/{idAdmin}','AdminsController@putEdit');
+Route::post('admin/edit/{idAdmin}','AdminsController@postUpdate');
+Route::post('admin/create','AdminsController@postCreate');
 Route::delete('admin/delete/{idAdmin}','AdminsController@deleteAdmin');
+
+/*
+ * Rutas para la creación de departamentos. Solo accederan a ella el superadministrador
+ */
+
+Route::get('departamento','DepartamentosController@getIndex'); //Ruta para mostrar la lista de todos los departamentos
+Route::get('departamento/create','DepartamentosController@create'); //Ruta para mostrar el formulario donde se crean los departamentos
+Route::get('departamento/show/{idDepartamento}','DepartamentosController@getShow'); //Ruta para mostrar los datos de un departamento
+Route::post('departamento/create/','DepartamentosController@postCreate');
+Route::post('departamento/edit/{idDepartamento}','DepartamentosController@postUpdate');
+Route::delete('departamento/delete/{idDepartamento}','DepartamentosController@deleteDepartamento');
+Route::get('departamento/edit/{idDepartamento}', 'DepartamentosController@getEdit');

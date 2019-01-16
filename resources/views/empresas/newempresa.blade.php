@@ -46,34 +46,31 @@
       Datos de nueva empresa
     </div>
     <!-- Formulario para coger los datos de la empresa-->
-     <form class="needs-validation" novalidate  action="{{action('AdminsController@postCreate')}}" method="POST">
-    
+     <form class="needs-validation" novalidate  action="{{action('EmpresasController@postCreate')}}" method="POST">
         {{ csrf_field() }}
-
         <div class="form-row">
           <!-- Nombre de la empresa-->
           <div class="col-md-4 mb-3">
-            <label for="empresa">Nombre del administrador</label>
-            <input type="text" class="form-control" name="administrador" id="administrador" placeholder="Nombre del administrador" required>
-            <div class="invalid-feedback">
-                Por favor, introduzca un correo electronico valido
-             </div>
+            <label for="empresa">Nombre de la empresa</label>
+            <input type="text" class="form-control" id="empresa" name="empresa"  required>
+            
           </div>
 
           <!-- Correo electronico al que mandaremos los alumnos inscritos-->
           <div class="col-md-4 mb-3">
             <label for="Email">Correo Electronico</label>
-            <input type="email" class="form-control" id="Email" name="Email"  placeholder="usuario@dominio.com"  required>
-            <div class="invalid-feedback">
+            <input type="email" class="form-control" id="Email" name="Email"  required>
+             <div class="invalid-feedback">
                 Por favor, introduzca un correo electronico valido
              </div>
           </div>
 
           <!-- Persona con la que nos pondremos en contacto en relación a la oferta-->
           <div class="col-md-4 mb-3">
-            <label for="responsable">Rol</label>
+
+            <label for="responsable">Resposable</label>
             <div class="input-group">          
-              <input type="number" class="form-control" name="rol" id="rol" placeholder="responsable de la empresa" aria-describedby="inputGroupPrepend" required>
+              <input type="text" class="form-control" id="responsable" name="responsable" required>
               <div class="invalid-feedback">
                 Por favor, introduzca el nombre de la persona de contacto.
               </div>
@@ -84,9 +81,8 @@
 
           <!-- Telefono de contacto-->
           <div class="col-md-12 mb-3">
-            <label for="telefono">Contraseña</label>
-            <input type="text" class="form-control" name="contrasenia" id="contrasenia" placeholder="Contraseña" required>
-           
+            <label for="telefono">Telefono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono"  required>
           </div>
 
           <button class="btn btn-primary" type="submit">Enviar</button>
