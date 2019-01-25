@@ -8,4 +8,6 @@ class Administrador extends Model
 {
      protected $table="administradores";
      protected $primaryKey="id_administradores";
+
+     
 }

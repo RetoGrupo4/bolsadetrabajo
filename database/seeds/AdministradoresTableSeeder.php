@@ -16,28 +16,19 @@ class AdministradoresTableSeeder extends Seeder
 
         $administrador=new Administrador();
         $administrador->nombre="superadmin";
-        $administrador->password="superadmin";
-        $administrador->rol=1;
-        $administrador->email="superAdmin@fptxurdinaga.com";
-        $administrador->password="superadmin";
+        $administrador->id_user=1;
         $administrador->id_departamento=1;
         $administrador->save();
 
         $administrador=new Administrador();
         $administrador->nombre="adminInfor";
-        $administrador->password="adminInfor";
-        $administrador->rol=2;
-        $administrador->email="adminInfor@fptxurdinaga.com";
-        $administrador->password="adminInfor";
+        $administrador->id_user=2;
         $administrador->id_departamento=2;
         $administrador->save();
 
         $administrador=new Administrador();
         $administrador->nombre="adminQuimica";
-        $administrador->password="adminQuimica";
-        $administrador->rol=2;
-        $administrador->email="adminQuimica@fptxurdinaga.com";
-        $administrador->password="adminQuimica";
+        $administrador->id_user=3;
         $administrador->id_departamento=3;
         $administrador->save();
     }

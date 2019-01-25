@@ -1,43 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Nuevo administrador</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-	<!-- Zona de navegación general para el superadministrado-->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="navbarGeneral">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Administradores</a>
-          <a class="nav-item nav-link" href="#">Departamentos</a>
-          <a class="nav-item nav-link" href="#">Ciclos Formativos</a>
-        </div>
-    </div>
-  </nav>
-  <!-- Zona navegación particular para la gestión de "administradores" --> 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="navbarNavEmpresas">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="{{url('admin')}}">Listado de administradores</a>
-          <a class="nav-item nav-link" href="url('admin/create')">Nuevo administrador</a>
-        </div>
-    </div>
-  </nav>
+@extends('layouts.master')
 
-  <div class="container bg-info text-center">
-      Datos del nuevo administrador
-    </div>
+
+@section('content')
+@include('partial.navbarSuperAdministracion')
+ 
+<h3 class="text-left titulo pt-5 ">NUEVO ADMINISTRADOR</h3>
+
     <!-- Formulario para coger los datos de la empresa-->
-    <form class="needs-validation" novalidate  action="{{action('AdminsController@postCreate')}}" method="POST">
+    <form class=" mt-5 mb-5 needs-validation" novalidate  action="{{action('AdminsController@postCreate')}}" method="POST">
       {{method_field('POST')}}
       {{ csrf_field() }}
       <div class="form-row">
@@ -78,5 +48,4 @@
  
   <button type="submit" class="btn btn-primary">Modificar</button>
 </form>
-</body>
-</html>
+@endsection

@@ -23,8 +23,10 @@ class CreateAlumnosTable extends Migration
             $table->string('codigo_postal',5);
             $table->string('nacionalidad',30);
             $table->string('sexo',1);
-            $table->string('password',40);
-            $table->string('email',125)->unique();
+            $table->string('cv',175);
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
+            $table->integer('id_departamento')->unsigned();
             $table->timestamps();
         });
     }

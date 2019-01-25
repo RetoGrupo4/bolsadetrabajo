@@ -6,7 +6,7 @@
         <div class="row justify-content-center align-items-center ">
             <div  class="col-md-6">
                 <div id="login-border" class="login-box col-md-12   p-5">
-                    <form class="form" action="" method="post">
+                    <form class="form" action="{{action('HomeController@index')}}" method="post">
                         <h3 class="text-center text-success">LOGIN</h3>
                         <div class="form-group">
                             <label for="email" class="text-success">Email:</label><br>

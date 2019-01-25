@@ -22,6 +22,7 @@
 		      <a class="nav-item nav-link active" href="#">Mi Curriculum</a>
 		      <a class="nav-item nav-link" href="{{url('ofertas')}}">Nuestras ofertas</a>
 		      <a class="nav-item nav-link" href="{{url('inscripciones/show/2')}}">Mis candidaturas</a>
+          <a class="nav-item nav-link" href="{{url('logout')}}">Salir</a>
 		    </div>
 	  </div>
 	</nav>

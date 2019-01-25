@@ -1,44 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Datos administrador</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-	<!-- Zona de navegación general para el superadministrado-->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="navbarGeneral">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Administradores</a>
-          <a class="nav-item nav-link" href="#">Departamentos</a>
-          <a class="nav-item nav-link" href="#">Ciclos Formativos</a>
-        </div>
-    </div>
-  </nav>
-  <!-- Zona navegación particular para la gestión de "administradores" --> 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="collapse navbar-collapse" id="navbarNavEmpresas">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="{{url('admin')}}">Listado de administradores</a>
-          <a class="nav-item nav-link active" href="{{url('admin/create')}}">Nuevo administrador</a>
-        </div>
-    </div>
-  </nav>
- 
+@extends('layouts.master')
 
-    <div class="container bg-info text-center">
-      Datos de administrador
-    </div>
+
+@section('content')
+@include('partial.navbarSuperAdministracion')
+ 
+<h3 class="text-left titulo pt-5 ">DATOS DEL ADMINISTRADOR</h3>
+
 	<div class="container-fluid">
-		<div class="card text-center">
+		<div class="card text-center mt-5 mb-5">
 			  <div class="card-header">
 			    Datos de la oferta
 			  </div>
@@ -73,6 +42,4 @@
 			</div>			  
 		</div>
 	</div>
-
-</body>
-</html>
+@endsection

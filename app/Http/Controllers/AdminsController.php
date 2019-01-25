@@ -6,41 +6,52 @@ use Illuminate\Http\Request;
 
 use App\Administrador;
 use App\Departamento;
+use App\User;
 class AdminsController extends Controller
 {
     public function getIndex()
     {
-    	$administradores=new Administrador();
-    	$listaAdministradores=$administradores::all();
+    	$listaAdministradores=Administrador::all();
     	return view('administradores.admins',['listaAdministradores'=>$listaAdministradores]);
     }
 
     public function getShow($idAdministrador)
     {
-    	$administradores=new Administrador();
-    	$administrador=$administradores::findOrFail($idAdministrador);
+        
+        // $usuario=User::find(1)->administrador;
+    	$administrador=Administrador::findOrFail($idAdministrador);
+       // echo $usuario->administrador->nombre;
     	return view('administradores.show',['administrador'=>$administrador]);
     }
 
     public function getCreate()
     {
-    	$departamentos=new Departamento();
-        $listaDepartamentos=$departamentos::all();
+        $listaDepartamentos=Departamento::all();
         return view('administradores.newAdmin',['listaDepartamentos'=>$listaDepartamentos]);
     
      }
-    public function postCreate()
+    public function postCreate(Request $request)
     {
-      
+        $usuario=new User();
+        $usuario->email=$request->input('Email');
+        $usuario->password=bcrypt($request->input('password'));
+        $usuario->rol=$request->input('rol');
+
+        $usuario->save();
+       
+        $administrador=new Administrador();
+        $administrador->nombre=$request->input('nombre');
+        $administrador->id_departamento=$request->input('departamento'); //$departamento
+        $administrador->id_user=$usuario->id;
+        $administrador->save();
+        $listaAdministradores=Administrador::all();
+        return view('administradores.admins',['listaAdministradores'=>$listaAdministradores]);
     }
 
     public function getEdit($idAdmin)
     {
-        $administradores=new Administrador();
-        $administrador= $administradores->findOrFail($idAdmin);
-
-        $departamentos=new Departamento();
-        $listaDepartamentos=$departamentos::all();
+        $administrador= Administrador::findOrFail($idAdmin);
+        $listaDepartamentos=Departamento::all();
     	return view('administradores.edit',['administrador'=>$administrador,
                                              'listaDepartamentos'=>$listaDepartamentos]);
     }
@@ -48,25 +59,22 @@ class AdminsController extends Controller
     public function postUpdate(Request $request, $idAdmin)
     {
 
-        $administradores= new Administrador();
-        $administrador=$administradores::findOrFail($idAdmin);
+        $administrador=Administrador::findOrFail($idAdmin);
         $administrador->nombre=$request->input('nombre');
         $administrador->email=$request->input('Email');
         $administrador->password=bcrypt($request->input('password'));
         $administrador->id_departamento=3; //$departamento;
         $administrador->rol=$request->input('rol');
         $administrador->save();
-        $administradores=new Administrador;
-        $listaAdministradores=$administradores::all();
+        $listaAdministradores=Administrador::all();
         return view('administradores.admins',['listaAdministradores'=>$listaAdministradores]);
     }
 
     public function deleteAdmin($idAdmin)
     {
-    	$administradores=new Administrador();
-    	$administrador=$administradores::findOrFail($idAdmin);
+    	$administrador=Administrador::findOrFail($idAdmin);
     	$administrador->delete();
-    	$administrador=$administradores::all();
+    	$administrador=Administrador::all();
     	return view('administradores.admins',['listaAdministradores'=>$administrador]);
     }
 }

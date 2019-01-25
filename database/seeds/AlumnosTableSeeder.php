@@ -23,8 +23,9 @@ class AlumnosTableSeeder extends Seeder
         $alumno->codigo_postal="48001";
         $alumno->nacionalidad="Español";
         $alumno->sexo="H";
-        $alumno->password="12345";
-        $alumno->email="alumno1@gmail.com";
+        $alumno->id_user="4";
+        $alumno->id_departamento="2";
+        $alumno->cv="C:\Documentos";
         $alumno->save();
 
         $alumno=new Alumno();
@@ -36,8 +37,10 @@ class AlumnosTableSeeder extends Seeder
         $alumno->codigo_postal="48002";
         $alumno->nacionalidad="Español";
         $alumno->sexo="M";
-        $alumno->password="23456";
-        $alumno->email="alumno2@gmail.com";
+        $alumno->id_user="5";
+        $alumno->cv="C:\Documentos";
+        $alumno->id_departamento="2";
+
         $alumno->save();
 
         $alumno=new Alumno();
@@ -49,8 +52,9 @@ class AlumnosTableSeeder extends Seeder
         $alumno->codigo_postal="48002";
         $alumno->nacionalidad="Español";
         $alumno->sexo="H";
-        $alumno->password="34567";
-        $alumno->email="alumno3@gmail.com";
+        $alumno->id_user="6";
+        $alumno->id_departamento="2";
+        $alumno->cv="C:\Documentos";
         $alumno->save();
     }
 }
