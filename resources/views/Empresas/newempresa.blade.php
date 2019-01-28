@@ -8,11 +8,9 @@
   <!-- Zona navegación particular para las empresas --> 
   
 
-    <div class="container bg-info text-center">
-      Datos de nueva empresa
-    </div>
+  <h3 class="text-left titulo pt-5 ">NUEVA EMPRESA</h3>
     <!-- Formulario para coger los datos de la empresa-->
-     <form class="needs-validation" novalidate  action="{{action('AdminsController@postCreate')}}" method="POST">
+     <form class="  mt-5 mb-5 needs-validation" novalidate  action="{{action('AdminsController@postCreate')}}" method="POST">
     
         {{ csrf_field() }}
 

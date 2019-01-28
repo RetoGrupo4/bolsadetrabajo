@@ -3,7 +3,7 @@
 @section('content')
 
 
-@include('partial.navbarAlumnos')
+@include('partial.navbarAdministracion')
 
 
 <div class="text-left titulo  pt-5 pb-4">OFERTAS</div>

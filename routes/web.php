@@ -24,6 +24,7 @@ Route::group(['routemiddleware'=>'auth'],function(){
 	Route::get('ofertas/show/{idOferta}','OfertasController@getShow'); 
 	Route::get('inscripciones/show/{idAlumno}','InscripcionesController@getShow');
 	Route::get('inscripciones/create/{idOferta}/{idAlumno}','InscripcionesController@getCreate');
+	Route::get('ofertas/lista','OfertasController@getListaOfertas');
 
 
 	/*
@@ -92,5 +93,6 @@ Route::group(['routemiddleware'=>'auth'],function(){
 	Route::get('ciclo/create','CiclosController@getCreate');/*Rediirecciona al formulario donde se colen los datos para crear el registro de un nuevo ciclo formativo*/
 	Route::post('ciclo/create','CiclosController@postCreate'); /*Redirecciona al metodo donde se crea un nuevo ciclo formativo*/
 });
+
 
 Route::get('/home', 'HomeController@index');

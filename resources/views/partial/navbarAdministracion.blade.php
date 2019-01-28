@@ -15,9 +15,9 @@
             <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"  aria-expanded="false">Alumnos</a>
             <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{{url('#')}}">Lista de alumnos</a>
+                  <a class="dropdown-item" href="{{url('alumno')}}">Lista de alumnos</a>
                   <a class="dropdown-item" href="{{url('#')}}">Nuevo alumno</a>
-                  <a class="dropdown-item" href="{{url('#')}}">Visualizar alumno</a>
+                  
 
                   </li>
 
@@ -27,7 +27,7 @@
             <div class="dropdown-menu">
                   <a class="dropdown-item" href="{{url('empresas')}}">Lista de empresas</a>
                   <a class="dropdown-item" href="{{url('empresas/create')}}">Nueva empresa</a>
-                  <a class="dropdown-item" href="{{url('empresas/show/1')}}">Visualizar empresa</a>
+ 
 
                   </li>
 
@@ -37,9 +37,9 @@
             <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"  aria-expanded="false">Ofertas</a>
             <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{{url('ofertas')}}">Lista de ofertas</a>
+                  <a class="dropdown-item" href="{{url('ofertas/lista')}}">Lista de ofertas</a>
                   <a class="dropdown-item" href="{{url('ofertas/create')}}">Nueva oferta</a>
-                  <a class="dropdown-item" href="{{url('ofertas/show/1')}}">Visualizar oferta</a>
+        
              
             </li>
             

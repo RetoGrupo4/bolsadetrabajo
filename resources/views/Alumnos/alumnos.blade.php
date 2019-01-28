@@ -3,7 +3,7 @@
 @section('content')
 
 
-@include('partial.navbarAlumnos')
+@include('partial.navbarAdministracion')
 
 
 <h3 class="text-left titulo pt-5 ">LISTADO DE ALUMNOS</h3>

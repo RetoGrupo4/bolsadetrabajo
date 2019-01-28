@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-@include('partial.navbarAlumnos')
+@include('partial.navbarAdministracion')
 
 <div class="container-fluid">
 	<div class="card text-center">
@@ -9,7 +9,7 @@
 			Datos del alumno
 				</div>
 				<div class="card-body">
-				<h5 class="card-title font-weight-bold">ALumno: {{$alumno->nombre}} {{$alumno->apellidos}}</h5>				
+				<h5 class="card-title font-weight-bold">Alumno: {{$alumno->nombre}} {{$alumno->apellidos}}</h5>				
 				<p class="card-text">
 					<strong>Dni</strong>: {{$alumno->dni}}
 					<br>

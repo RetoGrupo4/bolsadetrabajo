@@ -17,9 +17,8 @@
             <div class="dropdown-menu">
                   <a class="dropdown-item" href="{{url('admin')}}">Lista de adminitradores</a>
                   <a class="dropdown-item" href="{{url('admin/create')}}">Nuevo administrador</a>
-                  <a class="dropdown-item" href="{{url('admin/show/1')}}">Visualizar administrador</a>
-
-                  </li>
+                  </div>
+            </li>
 
 
             <li class="nav-item dropdown ">
@@ -27,8 +26,8 @@
             <div class="dropdown-menu">
                   <a class="dropdown-item" href="{{url('departamento')}}">Lista de departamentos</a>
                   <a class="dropdown-item" href="{{url('departamento/create')}}">Nueva departamentos</a>
-                  <a class="dropdown-item" href="{{url('departamento/show/1')}}">Visualizar departamentos</a>
-
+             
+            </div>
                   </li>
 
 
@@ -39,8 +38,8 @@
             <div class="dropdown-menu">
                   <a class="dropdown-item" href="{{url('ciclo')}}">Lista de ciclos</a>
                   <a class="dropdown-item" href="{{url('ciclo/create')}}">Nueva ciclos</a>
-                  <a class="dropdown-item" href="{{url('ciclo/show/1')}}">Visualizar ciclos</a>
-             
+                
+             </div>
             </li>
             
                

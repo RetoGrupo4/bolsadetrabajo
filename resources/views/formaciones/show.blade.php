@@ -9,8 +9,8 @@
 			    Datos del ciclo
 			  </div>
 			  <div class="card-body">
-			    <h5 class="card-title">Ciclo: {{$formacion->ciclo_formativo}}</h5>
-				<h5 class="card-title">Centro: {{$formacion->centro}}</h5>
+			    <h5 class="card-title font-weight-bold">Ciclo: {{$formacion->ciclo_formativo}}</h5>
+				<h5 class="card-title font-weight-bold">Centro: {{$formacion->centro}}</h5>
 			    <p class="card-text">
 			    	<strong>Titulo</strong>: {{$formacion->titulo}}
 			    	<br>

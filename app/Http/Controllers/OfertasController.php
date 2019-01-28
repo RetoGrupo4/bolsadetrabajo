@@ -16,6 +16,13 @@ class OfertasController extends Controller
     	return view('ofertas.oferta',['ofertas'=>$ofertas]);
     }
 
+    public function getListaOfertas()
+    {
+        //Busca todas las ofertas para que un alumno se apunte a ella
+    	$ofertas= Oferta::all();
+    	return view('ofertas.listaOferta',['ofertas'=>$ofertas]);
+    }
+
     public function getShow($idOferta)
     {
         //Busca los datos de una oferta para mostrarlo de forma individual
