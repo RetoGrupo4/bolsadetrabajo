@@ -39,6 +39,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function index()
+      {
+
+    
+     return redirect('register');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -66,6 +73,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'rol' => $data['rol'],
         ]);
     }
 }

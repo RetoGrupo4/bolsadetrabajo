@@ -14,8 +14,8 @@ class CreateFormacionesTable extends Migration
     public function up()
     {
         Schema::create('formaciones', function (Blueprint $table) {
-            $table->increments('id_formaciones');
-            $table->string('ciclo_formativo',125);
+            $table->increments('id');
+            $table->string('ciclo',125);
             $table->string('centro',125);
             $table->string('titulo',100);
             $table->date('anio');

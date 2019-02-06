@@ -37,18 +37,28 @@ font-weight: bold;
 font-size: 30px;
 }
 
-li{
-    height: 3.5em;
-    width: 9em;
-    -moz-border-radius: 1em 4em 1em 4em;
-    border-radius: 1em 4em 1em 4em;
+@media (min-width: 990px) {
+    li{
+        
+        height: 3.5em;
+        width: 9em;
+        -moz-border-radius: 1em 4em 1em 4em;
+        border-radius: 1em 4em 1em 4em;
+        padding-left: 0.5em;
+    
+        } 
+  }
+
+  li{
+    
+    
     background-color:#3c7d4a;
     border: 2px solid #01642a;
-    padding-left: 0.5em;
-
-    } 
+   
+  }
 
     li:hover{
+
         background-color:#01642a;
         border: 2px solid #3c7d4a;
     }
@@ -138,10 +148,10 @@ li{
 
    /*Maquetacion de Contenido + Footer */
    div#principal{
-       min-height: calc(80vh);
+       min-height: calc(100vh);
    }
 
    div#footer{
-       min-height: calc(5vh);
+       min-height: calc(10vh);
    }
     

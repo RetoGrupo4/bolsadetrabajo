@@ -18,7 +18,7 @@ class EmpresasController extends Controller
         //Consigue los datos de una empresa y crea un nuevo registro
     	$empresa=new Empresa();
     	$empresa->nombre=$request->input('empresa');
-    	$empresa->email=$request->input('Email');
+    	$empresa->email=$request->input('email');
     	$empresa->responsable=$request->input('responsable');
     	$empresa->telefono=$request->input('telefono');
        	$empresa->save();
@@ -46,7 +46,7 @@ class EmpresasController extends Controller
         //Coge los datos del formulario y actualiza los datos de la empresa
         $empresa=Empresa::findOrFail($idEmpresa);
         $empresa->nombre=$request->input('empresa');
-        $empresa->email=$request->input('Email');
+        $empresa->email=$request->input('email');
         $empresa->responsable=$request->input('responsable');
         $empresa->telefono=$request->input('telefono');
         $empresa->save();

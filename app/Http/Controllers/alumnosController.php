@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Alumno;
+use App\Departamento;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
 use Illuminate\Http\UploadFile;
+
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Redirect;
 
@@ -35,20 +38,21 @@ class alumnosController extends Controller
 
     public function postCreate(Request $request)
     {
+ 
+       
         //INSERTAR A LA BASE DE DATOS
         $alumno=new Alumno();
-        $alumno->dni=$request->input('dni');
+        $departamento->dni=$request->input('dni');
         $alumno->nombre=$request->input('nombre');
         $alumno->apellidos=$request->input('apellidos');
     	$alumno->direccion=$request->input('direccion');
     	$alumno->localidad=$request->input('localidad');
         $alumno->nacionalidad=$request->input('nacionalidad');
         $alumno->codigo_postal=$request->input('codigo');
-        $alumno->id_user=$request->input('user');
-        $alumno->id_departamento=$request->input('depar');
+        $alumno->id_user=Auth::user()->id;
         $alumno->sexo=$request->input('sexo');
+        $alumno->id_departamento=$departamento->id_departamentos;
 
- 
         $alumno->cv = $request->file('file')->getClientOriginalName();
         $name = $request->file('file')->getClientOriginalName();
        
@@ -65,8 +69,9 @@ class alumnosController extends Controller
     public function show($idAlumno)
     {
    
-        $alumno=Alumno::find($idAlumno);
-        return view('Alumnos.show', ['alumno'=>$alumno]);
+        $alumno=Alumno::where('id_user','=', $idAlumno)-> get();
+        $id=$alumno[0];
+        return view('Alumnos.show', ['alumno'=>$id,'user'=>Auth::user()]);
      
         
     }
