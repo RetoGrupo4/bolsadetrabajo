@@ -1,20 +1,30 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+<div class="container p-5 footerLogin">
+<div class="row justify-content-center align-items-center ">
 
-                <div class="panel-body">
+            <div class="col-12 text-center">
+            <form action="">
+            <p>
+            <input class="text-center border border-success" style="font-size:40px;" type="text" size="8" name="mireloj">
+            </p>
+            </form>
+            </div>
+
+        <div id="login-border" class=" login-box col-md-8 col-md-offset-2">
+            <div  class="panel panel-default">
+            
+            
+                <div class="panel-body  p-3" >
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-
+                        <h3 class="text-center text-success mb-5 font-weight-bold">LOGIN</h3>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">Correo electronico</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
@@ -26,9 +36,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label">Contraseña</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -43,7 +53,7 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
                                     </label>
                                 </div>
                             </div>
@@ -56,7 +66,7 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
+                                   Has olvidado tu contraseña?
                                 </a>
                             </div>
                         </div>

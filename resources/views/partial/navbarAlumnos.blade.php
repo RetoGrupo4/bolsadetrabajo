@@ -14,7 +14,7 @@
                 </li>
 
                  <li class="nav-item active">
-                      <a class="nav-link text-white" href="{{url('alumno/show/1')}}">Perfil</a>
+                      <a class="nav-link text-white" href="{{url('alumno/show/'.Auth::user()->id)}}">Perfil</a>
                 </li>
             
                 <li class="nav-item active">
@@ -28,6 +28,10 @@
                 <li class="nav-item active">
                       <a class="nav-link text-white" href="{{url('inscripciones/create/1/1')}}">Candidaturas</a>
                 </li>
+
+                <li class="nav-item active">
+                   <a class="nav-item nav-link text-white" href="{{url('logout')}}">Salir</a>               
+                 </li>
 
             </ul>
                  

@@ -25,6 +25,7 @@
             <input type="text" class="form-control" name="direccion" value="{{$alumno->direccion}}">
             </div>
         </div>
+       
         
         <div class="form-row">
             <div class="form-group col-md-6">

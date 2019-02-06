@@ -24,6 +24,7 @@
       <th scope="col">SEXO</th>
     </tr>
   </thead>
+  
 
   @foreach($alumnos as $alumno)
     <tr>

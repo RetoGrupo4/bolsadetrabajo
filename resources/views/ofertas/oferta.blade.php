@@ -22,6 +22,8 @@
             </div>
         </div>
     </div> 
+   {{Auth::user()-> rol}}
+
     <div id="products" class="row view-group ">
     @foreach($ofertas as $oferta)
         <div class="item card-group col-xs-4 col-lg-4 ">

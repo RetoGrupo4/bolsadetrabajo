@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-@include('partial.navbarAdministracion')
+@include('partial.navbarAlumnos')
 
 <div class="container-fluid">
 	<div class="card text-center">
@@ -20,6 +20,9 @@
 					<strong>CP</strong>:{{$alumno->codigo_postal}}
 					<br>
 					<strong>Nacionalidad</strong>:{{$alumno->nacionalidad}}
+					<br>
+					<strong>Correo</strong>:{{$user->email}}
+
 				</p>
 			<form action="{{action('alumnosController@edit',$alumno->id_alumno)}}" method="POST" 
 				style="display:inline">                
@@ -36,6 +39,9 @@
 					Borrar Alumno
 				</button>
 			</form>
+
+			<a href="#" class="btn btn-success" style="padding:8px 100px;margin-top:25px;">
+					Cambiar contraseña </a>
 		</div>
 	</div>
 </div>

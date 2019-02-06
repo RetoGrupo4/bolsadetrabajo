@@ -5,6 +5,7 @@
 
 <h3 class="text-left titulo pt-5 ">DATOS DEL ALUMNO</h3>
 
+
 <div class="container p-5">
     <div class="row justify-content-center align-items-center">
         <div class="col-md-12 p-2 form formInsertar">
@@ -32,14 +33,7 @@
             <label >Direccion</label>
             <input type="text" class="form-control" name="direccion" >
             </div>
-            <div class="form-group col-md-6">
-            <label >user</label>
-            <input type="text" class="form-control" name="user" >
-            </div>
-            <div class="form-group col-md-6">
-            <label >depar</label>
-            <input type="text" class="form-control" name="depar" >
-            </div>
+            
         </div>
         
         <div class="form-row">
@@ -80,7 +74,7 @@
             </label>
             </div>
         </div>
-    
+
 
     <div class = "form-group col-6">
       <legend> Curriculum:  </legend>

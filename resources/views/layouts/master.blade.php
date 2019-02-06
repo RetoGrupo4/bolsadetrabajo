@@ -12,6 +12,25 @@
     <meta name="csrf-token" content="{{ csrf_token() }}"> 
     <!--<link href="{{asset('css/app.css')}}" rel="stylesheet"> Añadimos el css generado con webpack-->    
     <title>BOLSA DE TRABAJO</title>  
+    <script>
+    function verHora()
+    {
+      var hora=new Date();
+      var horas= hora.getHours().toString();
+      var minutos= hora.getMinutes().toString();
+      if(minutos.length==1) minutos="0" + minutos;
+      var segundos= hora.getSeconds().toString();
+      if(segundos.lenght==1) segundos="0" + segundos;
+      document.forms[0].mireloj.value=horas + ":" + minutos + ":" + segundos;
+    }
+
+    </script>
+
+    <script>
+    var r =setInterval ("verHora()",500);
+
+    </script>
+    
   </head>
   <body>
     <div id="principal" class="container-fluid">
@@ -20,7 +39,6 @@
       </div>
       <div class="container">
           @yield('content')          
-        
       </div>     
   </div>
   <div id="footeer">

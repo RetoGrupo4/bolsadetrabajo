@@ -15,8 +15,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');//Ruta para salir como usuario
+Route::get('register', '\App\Http\Controllers\Auth\RegisterController@index');//Ruta para salir como usuario
 
-Route::group(['routemiddleware'=>'auth'],function(){
+Route::group(['middleware'=>'auth'],function(){
 	Route::get('ofertas/create/','OfertasController@create'); //Va a la pagina para crear una oferta nueva
 	Route::post('ofertas/create','OfertasController@postCreate');
 	Route::get('ofertas','OfertasController@getOfertas');
@@ -73,16 +74,15 @@ Route::group(['routemiddleware'=>'auth'],function(){
 	Route::post('alumno/edit/{idAlumno}','alumnosController@edit');
 	Route::put('alumno/update/{idAlumno}','alumnosController@update');
 	Route::delete('alumno/delete/{idAlumno}','alumnosController@delete');
-	Auth::routes();
+
 
 	/*Rutas para las acciones de formaciones*/
-	Route::get('formacion','formacionesController@index'); 
-	Route::get('formacion/create','formacionesController@getCreate');
-	Route::post('formacion/create','formacionesController@postCreate');
-	Route::get('formacion/show/{id_formaciones}','formacionesController@show');
-	Route::delete('formacion/delete/{id_formaciones}','formacionesController@delete');
-	Route::post('formacion/edit/{id_formaciones}','formacionesController@edit');
-	Route::put('formacion/update/{id_formaciones}','formacionesController@update');
+	Route::group(['middleware' => ['web']], function() {
+		Route::resource('formacion','formacionController');
+		Route::post('add','formacionController@add');
+		Route::post('edit','formacionController@edit');
+		Route::post('delete','formacionController@delete');
+	  });
 
 	/*Rutas para ciclos formativos*/
 	Route::get('ciclo','CiclosController@getIndex'); /*Listado de todos los ciclos formativos*/
@@ -94,5 +94,5 @@ Route::group(['routemiddleware'=>'auth'],function(){
 	Route::post('ciclo/create','CiclosController@postCreate'); /*Redirecciona al metodo donde se crea un nuevo ciclo formativo*/
 });
 
-
+Auth::routes();
 Route::get('/home', 'HomeController@index');

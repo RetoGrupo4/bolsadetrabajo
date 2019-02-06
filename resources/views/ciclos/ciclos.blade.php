@@ -23,8 +23,8 @@
       <th scope="row">{{$ciclo->id_ciclos_formativos}}</th>      
         <td><a href="{{url('ciclo/show/'.$ciclo->id_ciclos_formativos)}}">{{$ciclo->ciclo_formativo}}</a></td>
         <td>{{$ciclo->id_departamento}}</td>
-     
     </tr>
    @endforeach
   </table>
+</div>
 @endsection

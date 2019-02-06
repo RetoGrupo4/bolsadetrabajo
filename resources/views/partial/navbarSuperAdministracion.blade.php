@@ -41,12 +41,7 @@
                 
              </div>
             </li>
-            
-               
-
-                <li class="nav-item active">
-                      <a class="nav-link text-white" href="">Historial</a>
-                </li>
+    
 
                 <li class="nav-item active">
                    <a class="nav-item nav-link text-white" href="{{url('logout')}}">Salir</a>               
