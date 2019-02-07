@@ -31,9 +31,9 @@ class alumnosController extends Controller
 
     public function getCreate()
     {
-  
+        $listaDepartamentos=Departamento::all();
         // carga la vista y pasa los alumnos
-        return view('Alumnos.create');
+        return view('Alumnos.create',['listaDepartamentos'=>$listaDepartamentos]);
     }
 
     public function postCreate(Request $request)
@@ -51,7 +51,8 @@ class alumnosController extends Controller
         $alumno->codigo_postal=$request->input('codigo');
         $alumno->id_user=Auth::user()->id;
         $alumno->sexo=$request->input('sexo');
-        $alumno->id_departamento=$departamento->id_departamentos;
+        $alumno->id_departamento=$request->input('departamento'); 
+        
 
         $alumno->cv = $request->file('file')->getClientOriginalName();
         $name = $request->file('file')->getClientOriginalName();

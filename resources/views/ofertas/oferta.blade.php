@@ -22,7 +22,7 @@
             </div>
         </div>
     </div> 
-   {{Auth::user()-> rol}}
+
 
     <div id="products" class="row view-group ">
     @foreach($ofertas as $oferta)

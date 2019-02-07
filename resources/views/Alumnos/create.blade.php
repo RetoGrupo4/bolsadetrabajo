@@ -74,13 +74,23 @@
             </label>
             </div>
         </div>
+        <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="departamento">Departamento</label>
+        <select id="departamento" name="departamento" class="form-control">
+          @foreach($listaDepartamentos as $departamento)
+            <option value="{{$departamento->id_departamentos}}">{{$departamento->descripcion}}</option>
+          @endforeach
+        </select>
+      </div>
+   
 
-
-    <div class = "form-group col-6">
+    <div class = " pl-4 form-group col-6">
       <legend> Curriculum:  </legend>
         <label for="exampleFormControlFile1">Archivo PDF </label>
         <input type="file" class="form-control-file" id="file" name="file">
         </div> 
+        </div>
             <div>
                 <button type="submit" class="btn btn-success">Guardar Datos</button>
             </div>

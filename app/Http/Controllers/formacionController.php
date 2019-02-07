@@ -37,14 +37,14 @@ class formacionController extends Controller
         $alumno = DB::select('select id_alumno from alumnos where id_user = :id', ['id' => $userId]);
         $id=$alumno->id_alumno;
  */ 
-        $alumno = DB::table('alumnos')->join('users', 'alumnos.id_user', '=', 'users.id')->get();
+        
 
     	$formacion = new Formacion;
         $formacion->ciclo = $request->ciclo;
         $formacion->centro = $request->centro;
         $formacion->titulo = $request->titulo;
         $formacion->anio = $request->anio;
-        $formacion->id_alumno=$alumno->id_alumno;
+        $formacion->id_alumno=1;
 		$formacion->save();
 		
         return response()->json($formacion);

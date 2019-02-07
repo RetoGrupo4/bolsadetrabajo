@@ -4,7 +4,7 @@
 @section('content')
 @include('partial.navbarAdministracion')
  
-<h3 class="text-left titulo pt-5 ">LISTADO DE EMPRESAS</h3>
+<h3 class="text-left titulo pt-5">LISTADO DE EMPRESAS</h3>
 
     <!-- Listado de ofertas-->
   <div class="container-fluid">
